@@ -1,26 +1,15 @@
-import React from 'react';
-import Routes from './Routes';
-import StoreContextProvider from './contexts/StoreContext';
 
-import 'react-toastify/dist/ReactToastify.css';
-import { toast } from 'react-toastify';
-import { ConfirmProvider } from 'material-ui-confirm';
-
-toast.configure();
-
-const defaultConfirmOptions = {
-  title: 'Вы уверены?',
-  confirmationText: 'Да',
-  cancellationText: 'Отмена',
-};
+import React from "react";
+import Hero from "./Store/components/Hero/Hero";
+import NavBar from "./Store/components/NavBar/NavBar";
 
 function App() {
   return (
-    <ConfirmProvider defaultOptions={defaultConfirmOptions}>
-      <StoreContextProvider>
-        <Routes />
-      </StoreContextProvider>
-    </ConfirmProvider>
+    <div className="App">
+      <NavBar />
+      <Hero />
+    </div>
+
   );
 }
 
