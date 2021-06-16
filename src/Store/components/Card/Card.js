@@ -9,6 +9,7 @@ import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import { storeContext } from "../../context/StoreContext";
 import classese from "./card.module.css";
+import Truncate from "react-truncate";
 
 const useStyles = makeStyles({
   root: {
@@ -16,6 +17,13 @@ const useStyles = makeStyles({
   },
   media: {
     height: 140,
+  },
+  description: {
+    height: 100,
+    marginTop: 20,
+  },
+  desc: {
+    color: "#000",
   },
 });
 
@@ -39,8 +47,15 @@ export default function MediaCard({ data }) {
             <Typography gutterBottom variant="h5" component="h2">
               {title}
             </Typography>
-            <Typography variant="body2" color="textSecondary" component="p">
-              {description}
+            <Typography
+              className={classes.description}
+              variant="body2"
+              color="textSecondary"
+              component="p"
+            >
+              <Truncate lines={2} ellipsis={"..."}>
+                {description}
+              </Truncate>
             </Typography>
           </CardContent>
         </CardActionArea>

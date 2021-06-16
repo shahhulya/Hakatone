@@ -7,6 +7,7 @@ import { storeContext } from "../../context/StoreContext";
 const useStyles = makeStyles(() => ({
   root: {
     flexGrow: 1,
+    backgroundColor: "rgba(255,250,250, 0.3)",
   },
 }));
 
