@@ -19,46 +19,40 @@ const useStyles = makeStyles({
   },
 });
 
-export default function MediaCard() {
+export default function MediaCard({ data }) {
   const classes = useStyles();
 
-  const { products, fetchProducts } = useContext(storeContext);
+  const { title, description, images } = data;
 
-  useEffect(() => {
-    fetchProducts();
-  }, []);
+  const { fetchProducts } = useContext(storeContext);
 
   return (
-    <>
-      {products.map((product) => (
-        <div className={classese.cards}>
-          <Card className={classes.root}>
-            <CardActionArea>
-              <CardMedia
-                className={classes.media}
-                image={product.image}
-                title="Contemplative Reptile"
-              />
-              <CardContent>
-                <Typography gutterBottom variant="h5" component="h2">
-                  {product.title}
-                </Typography>
-                <Typography variant="body2" color="textSecondary" component="p">
-                  {product.description}
-                </Typography>
-              </CardContent>
-            </CardActionArea>
-            <CardActions>
-              <Button size="small" color="primary">
-                Share
-              </Button>
-              <Button size="small" color="primary">
-                Learn More
-              </Button>
-            </CardActions>
-          </Card>
-        </div>
-      ))}
-    </>
+    <div className={classese.cards}>
+      <Card className={classes.root}>
+        <CardActionArea>
+          <CardMedia
+            className={classes.media}
+            image={images[0]}
+            title="Contemplative Reptile"
+          />
+          <CardContent>
+            <Typography gutterBottom variant="h5" component="h2">
+              {title}
+            </Typography>
+            <Typography variant="body2" color="textSecondary" component="p">
+              {description}
+            </Typography>
+          </CardContent>
+        </CardActionArea>
+        <CardActions>
+          <Button size="small" color="primary">
+            Share
+          </Button>
+          <Button size="small" color="primary">
+            Learn More
+          </Button>
+        </CardActions>
+      </Card>
+    </div>
   );
 }
