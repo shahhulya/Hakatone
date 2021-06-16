@@ -2,6 +2,7 @@ import React from "react";
 import { Carousel } from "react-responsive-carousel";
 import classes from "./hero.module.css";
 import "react-responsive-carousel/lib/styles/carousel.css";
+import vid from "../../assets/videos/video.mp4";
 
 export default function Hero() {
   return (
@@ -30,5 +31,10 @@ export default function Hero() {
         />
       </div>
     </Carousel>
+    // <div>
+    //   <video className={classes.video} autoPlay muted loop>
+    //     <source src={vid} />
+    //   </video>
+    // </div>
   );
 }

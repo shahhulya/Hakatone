@@ -1,15 +1,12 @@
-
 import React from "react";
-import Hero from "./Store/components/Hero/Hero";
-import NavBar from "./Store/components/NavBar/NavBar";
+import StoreContextProvider from "./Store/context/StoreContext";
+import Store from "./Store/Store";
 
 function App() {
   return (
-    <div className="App">
-      <NavBar />
-      <Hero />
-    </div>
-
+    <StoreContextProvider>
+      <Store />
+    </StoreContextProvider>
   );
 }
 
